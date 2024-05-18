@@ -5,60 +5,98 @@ output: html_document
 
 ## Project title
 
-Give your project a concise, interesting title that summarizes the entirety of your project
+NBA Clutch Predictor
 
 ### Authors
 
-Names of your team members
+Altti Koskinen
 
 ### Date
 
-Winter 2022
+Spring 2024
 
 ### Abstract
 
-No more than three sentences that summarize your project. Focus on the very most important aspects. For example: (1) "Our main question is .... This question is important because .... To address the question, we will ...." (2) "We are concerned with ..., because .... To address this concern, we plan to ...." (3) "Consider that .... This is important because .... Accordingly, we plan to ...."
+Consider that in the world of the NBA, clutch moments can define a player and decide if a team wins. This is important because understanding how players perform under pressure and when they need to the most can show a players true skills, and impact on how a game ends. Accordingly, we plan to create a tool that can use and analyze player cltuch shot data, allowing people to predict and see who could make the next defining play.
 
 ### Keywords
 
-3-5 keywords that summarize your project.
-(e.g., "Keywords: human physiology; bicycle exercise; Gen Z; times-series data")
+NBA; clutch scoring; player; team; predictor
 
 ### Introduction  
 
-Briefly introduce your project.  Include 3-5 research questions. What motivates the questions? Why are they important? (at least 200 words)
+This project aims to analyze and understand NBA player and team clutch performance using data from clutch free throw attempts/percent made compared to overall free throw attempts/percent made, clutch shots taken, made and percentage. Clutch moments in basketball games are high pressure and show how players deal with that pressure and use their skills. Some research questions would be looking at how clutch situations impact free throws and field goals made. How much does a players clutch factor play into winning games. Does clutch shot efficiency rise with more attempts. All these questions are important because they can enhance peoples appreciation for players skills when they matter most and how pressure impacts performance efficiency in general.
 
 ### Related Work  
 
-Describe your topic and related work in this space. You must include 3 citations to related work (URLs to similar work, high quality articles from the popular press, research papers, etc. ) Please use a standard citation style of your choice. (at least 200 words)
+This article by [Inpredictable](https://www.inpredictable.com/2014/03/measuring-clutch-play-in-nba.html) looked into how to measure clutch shots and what counts as one. They explain how the NBA term for clutch shot is very broad and includes shots that definitely are much less clutch. 
+> "A three point basket with your team down by two and five seconds to play is far more clutch than a two pointer with 3:50 on the clock and up by three"
+
+This next article by [Fadeaway World](https://fadeawayworld.net/ranking-the-20-most-clutch-players-in-nba-history-michael-jordan-kobe-bryant-and-larry-bird-were-masters-late-in-games) look at the most clutch players of all time ranking them in a top 20 list. In addition they showed each players most clutch moments as well. They define clutch as:
+> "the final shot to give their team the lead or tie the game in the final 60 seconds in the fourth quarter or overtime periods"
+
+This last article by [The Athletic](https://theathletic.com/1142773/2019/08/20/the-clutch-factor-analyzing-hero-shots-in-the-nba/) looked more at team specific clutch factors and how better teams will still be more likely to win no matter if the game comes down to the final minute or not. The author did point out better team win less in close games than in not close ones.
+> "As mentioned above, teams that were good at winning non-clutch games were generally better at winning these very close 'clutch' games than were worse teams, but late/close situations evened the odds considerably"
 
 ### The Dataset
 
 Where did you find the data? Please include a link to the data source  
+
+[The Pudding Clutch Data Set](https://github.com/the-pudding/data/tree/master/clutch)
+
 Who collected the data?  
-How was the data collected or generated?  
+
+The Pudding
+
+How was the data collected or generated? 
+
+The data was collected on all the clutch shots taken since the 1996-97 season until last season 
+
 Why was the data collected?  
+
+To quantify clutchness in a number
+
 How many observations (rows) are in your data?  
+
+There are 288 observations in the data set
+
 How many features (columns) are in the data?  
+
+There are 11 features in the data set
+
 What, if any, ethical questions or questions of power do you need to consider when working with this data?  
+
+There does not seem to be any questions of power to consider.
+
 What are possible limitations or problems with this data?   (at least 200 words)
+
+Some possible limitations with this data set could be exactly what defines a clutch shot, for example how many possessions back still count as well as how much time left still counts. This makes it more difficult to understand and use the data more accurately. In addition, the clutch shots are grouped by players and there is no grouping for year, which can make it difficult to do anything with the data that involves seasons. Also another problem is that only players who have attempted a clutch shot are recorded which makes it hard to assume what a player that hasn't attempted one yet could do. Finally another problem is that the spread of clutch shots attempted is very wide which can make predictions for some players much better for someone with hundreds of clutch attempts versus someone with only a handful.
 
 ### Implications
 
-Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (at least 150 words)
+If the research questions end up getting answered, the possible implications include a better insight into which players should take the clutch shots in the future, how often clutch shot efficiency will actually impact the game and if playing the final minutes safe is better when looking at accuracy based on a shots difficulty. Finally, technologists could find the best player to give the ball to in real time if a basketball game starts to become close, allowing real time strategy changes to align with the data. In general the implications would contribute to a more data and informed approach to basketball.
 
 ### Limitations & Challenges
-What challenges or limitations might you need to address with your project idea more broadly? Briefly discuss. (at least 150 words)
+
+Some important variable that might be important down the line could be missing. For exmaple looking back to the limitations of the data set section, there is no grouping for year which can make understanding and analyzing the data impossible in some situations. Also using the data to create create a predictor might prove to be difficult and very inaccurate if incorrect steps or decisions get made. 
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+Since the 1996-97 NBA season, 39903 clutch shots have been taken. 
+
+```{r, echo = FALSE}
+source("summary_info.R")
+```
 
 ### Table
 
 Include a table of aggregate information
 
 Describe why you included the table and what information it reveals
+
+```{r, echo = FALSE}
+source("summary_table.R")
+```
 
 ### Chart 1
 
@@ -68,7 +106,8 @@ Describe why you chose this chart and what information it reveals
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE}
+source("plot_one.R")
 ```
 
 ### Chart 2
