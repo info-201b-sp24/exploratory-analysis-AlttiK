@@ -80,45 +80,47 @@ If the research questions end up getting answered, the possible implications inc
 
 Some important variable that might be important down the line could be missing. For exmaple looking back to the limitations of the data set section, there is no grouping for year which can make understanding and analyzing the data impossible in some situations. Also using the data to create create a predictor might prove to be difficult and very inaccurate if incorrect steps or decisions get made. 
 
+
 ### Summary Information
 
-Since the 1996-97 NBA season, 39903 clutch shots have been taken. 
+###### Loading Libraries
 
-```{r, echo = FALSE}
-source("summary_info.R")
+```{r, echo = FALSE, code = readLines("libraries.R")}
+```
+
+Since the 1996-97 NBA season, 39903 clutch shots have been taken, with an average of 48% success percentage. When looking at that number compared to normal shots, it is obvious the affect of pressure has on players. Free throw percentage is also down a considerable percent. Surprisingly, harder shots are made very slightly more on average by 1.38 percent, though, the range for adjusted shot percent very high. Finally the best player based on impact is Kobe, this number is the "difference between the team's win probability if the shot is made vs. if it was missed." Players with higher number have much higher impact on a team chances of winning.
+
+
+```{r, echo = FALSE, code = readLines("summary_info.R")}
 ```
 
 ### Table
 
-Include a table of aggregate information
+Table of summary information
 
-Describe why you included the table and what information it reveals
+This table reveals the averages, highest, and lowest number for all notable variables for clutch shots and games.
 
-```{r, echo = FALSE}
-source("summary_table.R")
+```{r, echo = FALSE, code = readLines("summary_table.R")}
 ```
 
 ### Chart 1
 
-Include a chart
+This graph shows players based on clutch shots attempted and their completion percentages. I chose this chart because it shows some of the most efficient players in the league in clutch situations as well as where players with the most clutch attempts stand. 
 
-Describe why you chose this chart and what information it reveals
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-```{r, echo = FALSE}
-source("plot_one.R")
-```
 ``````{r, echo = FALSE, code = readLines("plot_one.R")}
 ```
+
+
 ### Chart 2
 
-Include a chart
+This histogram shows Where players fall for impact on a team. This number is found looking at the swing(affect on team win probability based on a shot going in or not) makes per game. This graph shows where most players in the league fall as well as some of the super stars who are able to make game deciding shots when necessary.
 
-Describe why you chose this chart and what information it reveals
+``````{r, echo = FALSE, code = readLines("plot_two.R")}
+```
 
 ### Chart 3
 
-Include a chart
+This scatter plot displays how games played and experience does not end up having too much of an impact on making difficult shots in high pressure situations. "Clutch" players will fall into the positives for making difficult shots regardless of games played. The distribution is about equal for a positive or negative adjusted percentage.
 
-Describe why you chose this chart and what information it reveals
+``````{r, echo = FALSE, code = readLines("plot_three.R")}
+```
